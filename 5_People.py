@@ -9,7 +9,6 @@ class FullName:
         check(len(self.name.split()) > 1,
               f"'{self.name}' needs at least first and last names")
 
-
 @dataclass(frozen=True)
 class BirthDate:
     dob: str
@@ -17,14 +16,12 @@ class BirthDate:
         print(f"BirthDate checking {self.dob}")
         check(True, f"Add code to validate {self.dob}")
 
-
 @dataclass(frozen=True)
 class EmailAddress:
     address: str
     def __post_init__(self):
         print(f"EmailAddress checking {self.address}")
         check(True, f"Add code to validate {self.address}")
-
 
 @dataclass(frozen=True)
 class Person:
@@ -34,7 +31,6 @@ class Person:
     def __post_init__(self):
         print(f"Person checking fields")
         check(True, f"Add code to validate Person")
-
 
 if __name__ == '__main__':
     person = Person(
