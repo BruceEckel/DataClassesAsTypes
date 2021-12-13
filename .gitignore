@@ -1,0 +1,8 @@
+
+.idea/ATypeIsNotAClass.iml
+.idea/aws.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/misc.xml
+*.xml
+__pycache__/check.cpython-310.pyc
