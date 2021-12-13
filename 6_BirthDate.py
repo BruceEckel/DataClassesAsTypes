@@ -27,6 +27,4 @@ class BirthDate:
 
 if __name__ == '__main__':
     print(BirthDate(Month(7), Day(8), Year(1957)))
-    print(BirthDate(Month(7), Day(8), Year(1857)))
-    print(BirthDate(Month(7), Day(32), Year(1957)))
-    print(BirthDate(Month(0), Day(8), Year(1957)))
+    print(BirthDate(Month(0), Day(32), Year(1857)))
