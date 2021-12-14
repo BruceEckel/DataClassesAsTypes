@@ -3,7 +3,7 @@ from check import check
 class OneToTen:
     def __init__(self, val: int):
         self.val = val
-    def __str__(self):
+    def __str__(self) -> str:
         return f"OneToTen({self.val})"
 
 def f1(x: OneToTen) -> OneToTen:

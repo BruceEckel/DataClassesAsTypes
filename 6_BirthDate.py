@@ -4,19 +4,19 @@ from check import check
 @dataclass(frozen=True)
 class Day:
     day: int
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         check(0 < self.day <= 31, f"{self.day}: day of month out of range")
 
 @dataclass(frozen=True)
 class Month:
     month: int
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         check(0 < self.month <= 12, f"{self.month}: month out of range")
 
 @dataclass(frozen=True)
 class Year:
     year: int
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         check(1900 < self.year <= 2022, f"{self.year}: year out of range")
 
 @dataclass(frozen=True)

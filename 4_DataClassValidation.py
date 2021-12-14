@@ -4,7 +4,7 @@ from check import check
 @dataclass(frozen=True)
 class OneToTen:
     val: int
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         check(0 < self.val <= 10, f"{self.val} out of range")
 
 def f1(x: OneToTen) -> OneToTen:

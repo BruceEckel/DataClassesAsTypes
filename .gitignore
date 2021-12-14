@@ -6,3 +6,4 @@
 .idea/misc.xml
 *.xml
 __pycache__/check.cpython-310.pyc
+.idea/DataClassesAsTypes.iml

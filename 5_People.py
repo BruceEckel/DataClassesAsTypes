@@ -4,7 +4,7 @@ from check import check
 @dataclass(frozen=True)
 class FullName:
     name: str
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         print(f"FullName checking {self.name}")
         check(len(self.name.split()) > 1,
               f"'{self.name}' needs at least first and last names")
@@ -12,14 +12,14 @@ class FullName:
 @dataclass(frozen=True)
 class BirthDate:
     dob: str
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         print(f"BirthDate checking {self.dob}")
         check(True, f"Add code to validate {self.dob}")
 
 @dataclass(frozen=True)
 class EmailAddress:
     address: str
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         print(f"EmailAddress checking {self.address}")
         check(True, f"Add code to validate {self.address}")
 
@@ -28,7 +28,7 @@ class Person:
     name: FullName
     date_of_birth: BirthDate
     email: EmailAddress
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         print(f"Person checking fields")
         check(True, f"Add code to validate Person")
 

@@ -4,7 +4,7 @@ class OneToTen:
     def __init__(self, val: int):
         self.val = val
         check(0 < self.val <= 10, f"{self.val} out of range")
-    def __str__(self):
+    def __str__(self) -> str:
         return f"OneToTen({self.val})"
 
 def f1(x: OneToTen) -> OneToTen:
