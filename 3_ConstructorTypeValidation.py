@@ -22,5 +22,5 @@ if __name__ == '__main__':
     print(f1(b))
     a.val = 99   # Can still mutate to an invalid OneToTen
     print(a, "Didn't detect that it's out of range!")
-    # So, still need to validate OnToTen inside functions
+    # So, still need to validate OneToTen inside functions
     print(f2(a))
