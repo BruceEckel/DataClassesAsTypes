@@ -38,3 +38,5 @@ if __name__ == '__main__':
         BirthDate("7/8/1957"),
         EmailAddress("mindviewinc@gmail.com")
     )
+    print(person)
+    
