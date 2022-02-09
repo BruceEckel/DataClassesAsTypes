@@ -1,25 +1,25 @@
 from check import check
 
-class OneToTen:
-    def __init__(self, val: int):
-        self.val = val
+class Stars:
+    def __init__(self, number: int):
+        self.number = number
     def __str__(self) -> str:
-        return f"OneToTen({self.val})"
+        return f"Stars({self.number})"
 
-def f1(x: OneToTen) -> OneToTen:
-    check(0 < x.val <= 10, f"{x.val} out of range")
-    return OneToTen(x.val * 10)
+def f1(x: Stars) -> Stars:
+    check(0 < x.number <= 10, f"{x.number} out of range")
+    return Stars(x.number * 10)
 
-def f2(x: OneToTen) -> OneToTen:
-    check(0 < x.val <= 10, f"{x.val} out of range")
-    return OneToTen(x.val + 10)
+def f2(x: Stars) -> Stars:
+    check(0 < x.number <= 10, f"{x.number} out of range")
+    return Stars(x.number + 10)
 
 if __name__ == '__main__':
-    a = OneToTen(6)
-    print(a)
-    print(f1(a))
-    print(f2(a))
-    b = OneToTen(11)
-    print(f1(b))
-    a.val = 99
-    print(f2(a))
+    stars1 = Stars(6)
+    print(stars1)
+    print(f1(stars1))
+    print(f2(stars1))
+    stars2 = Stars(11)
+    print(f1(stars2))
+    stars1.number = 99
+    print(f2(stars1))

@@ -1,26 +1,26 @@
 from check import check
 
-class OneToTen:
-    def __init__(self, val: int):
-        self.val = val
-        check(0 < self.val <= 10, f"{self.val} out of range")
+class Stars:
+    def __init__(self, number: int):
+        self.number = number
+        check(0 < self.number <= 10, f"{self.number} out of range")
     def __str__(self) -> str:
-        return f"OneToTen({self.val})"
+        return f"Stars({self.number})"
 
-def f1(x: OneToTen) -> OneToTen:
-    return OneToTen(x.val * 10)
+def f1(x: Stars) -> Stars:
+    return Stars(x.number * 10)
 
-def f2(x: OneToTen) -> OneToTen:
-    return OneToTen(x.val + 10)
+def f2(x: Stars) -> Stars:
+    return Stars(x.number + 10)
 
 if __name__ == '__main__':
-    a = OneToTen(6)
-    print(a)
-    print(f1(a))
-    print(f2(a))
-    b = OneToTen(11)
-    print(f1(b))
-    a.val = 99   # Can still mutate to an invalid OneToTen
-    print(a, "Didn't detect that it's out of range!")
-    # So, still need to validate OneToTen inside functions
-    print(f2(a))
+    stars1 = Stars(6)
+    print(stars1)
+    print(f1(stars1))
+    print(f2(stars1))
+    stars2 = Stars(11)
+    print(f1(stars2))
+    stars1.number = 99   # Can still mutate to an invalid Stars
+    print(stars1, "Didn't detect that it's out of range!")
+    # So, still need to validate Stars inside functions
+    print(f2(stars1))
