@@ -2,27 +2,24 @@ from dataclasses import dataclass
 from enum import Enum
 from check import check
 
-def trace(self): print(f"{self} __post_init__")
 
 @dataclass(frozen=True)
 class Day:
-    day: int
-    def __repr__(self):
-        return f"Day({self.day})"
+    n: int
+
     def __post_init__(self) -> None:
-        trace(self)
-        check(0 < self.day <= 31, f"{self.day}: day of month out of range")
+        check(0 < self.n <= 31, f"{self.n}: Day of month out of range")
+
 
 @dataclass(frozen=True)
-class Month:
-    month: int
-    def __repr__(self):
-        return f"Month({self.month})"
-    def __post_init__(self) -> None:
-        trace(self)
-        check(1 <= self.month <= 12, f"{self.month}: month out of range")
+class Year:
+    n: int
 
-class Month2(Enum):
+    def __post_init__(self) -> None:
+        check(1900 < self.n <= 2022, f"{self.n}: Year out of range")
+
+
+class Month(Enum):
     JANUARY = (1, 31)
     FEBRUARY = (2, 28)
     MARCH = (3, 31)
@@ -36,37 +33,27 @@ class Month2(Enum):
     NOVEMBER = (11, 30)
     DECEMBER = (12, 31)
 
-@dataclass(frozen=True)
-class Year:
-    year: int
+    @staticmethod
+    def number(month_number: int):
+        check(0 < month_number <= 12, f"Month {month_number} out of range")
+        return list(Month)[month_number - 1]
+
+    def check_day(self, day: Day):
+        check(day.n <= self.value[1], f"{day} out of range for {self}")
+
     def __repr__(self):
-        return f"Year({self.year})"
-    def __post_init__(self) -> None:
-        trace(self)
-        check(1900 < self.year <= 2022, f"{self.year}: year out of range")
+        return self.name
+
 
 @dataclass(frozen=True)
 class BirthDate:
     m: Month
     d: Day
     y: Year
-    def max_days(self, max_day):
-        print(f"Checking max_days({max_day})")
-        check(self.d.day <= max_day,
-              f"MonthDay: {self.d} out of range for {self.m}")
-    def __post_init__(self) -> None:
-        trace(self)
-        match self.m:
-            case Month(2):  # February
-                print("case Month(2)")
-                self.max_days(28)
-            case Month(9 | 4 | 6 | 11):  # September, April, June and November
-                print("case Month(9 | 4 | 6 | 11)")
-                self.max_days(30)
-            case Month(_):  # All the rest...
-                print("case Month(_)")
-                self.max_days(31)
-        print('-' * 30)
+
+    def __post_init__(self):
+        self.m.check_day(self.d)
+
 
 if __name__ == '__main__':
     for date in [
@@ -79,4 +66,6 @@ if __name__ == '__main__':
         (11, 31, 2022),
         (12, 31, 2022),
     ]:
-        BirthDate(Month(date[0]), Day(date[1]), Year(date[2]))
+        print(date)
+        print(BirthDate(Month.number(date[0]), Day(date[1]), Year(date[2])))
+        print('-' * 30)
