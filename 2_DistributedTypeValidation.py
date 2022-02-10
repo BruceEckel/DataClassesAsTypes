@@ -1,3 +1,4 @@
+# "A class is not a type"
 from check import check
 
 class Stars:
@@ -6,13 +7,13 @@ class Stars:
     def __str__(self) -> str:
         return f"Stars({self.number})"
 
-def f1(x: Stars) -> Stars:
-    check(0 < x.number <= 10, f"{x.number} out of range")
-    return Stars(x.number * 10)
+def f1(s: Stars) -> Stars:
+    check(0 < s.number <= 10, f"{s.number} out of range")
+    return Stars(s.number * 10)
 
-def f2(x: Stars) -> Stars:
-    check(0 < x.number <= 10, f"{x.number} out of range")
-    return Stars(x.number + 10)
+def f2(s: Stars) -> Stars:
+    check(0 < s.number <= 10, f"{s.number} out of range")
+    return Stars(s.number + 10)
 
 if __name__ == '__main__':
     stars1 = Stars(6)

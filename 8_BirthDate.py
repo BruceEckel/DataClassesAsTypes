@@ -1,3 +1,5 @@
+# An Enum is also a type, and is preferable
+# when you have a smaller set of values.
 from dataclasses import dataclass
 from enum import Enum
 from check import check

@@ -11,7 +11,7 @@ if __name__ == '__main__':
     print(m)
     print(m.number, m.name, m.depth)
     mm = Messenger("xx", 1)  # Uses default argument
-    print(mm == Messenger("xx", 1))
+    print(mm == Messenger("xx", 1))  # Generates __eq__()
     print(mm == Messenger("xx", 2))
 
     # Default dataclass is mutable:

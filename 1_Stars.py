@@ -1,3 +1,5 @@
+# Evaluating using 1-10 stars.
+# Validation using preconditions.
 from check import check
 
 def f1(stars: int) -> int:

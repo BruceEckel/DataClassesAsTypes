@@ -1,17 +1,27 @@
+# Careful encapsulation
 from check import check
+
 
 class Stars:
     def __init__(self, number: int):
-        self.number = number
-        check(0 < self.number <= 10, f"{self.number} out of range")
+        self._number = number
+        check(0 < self._number <= 10, f"{self._number} out of range")
+
+    @property  # Prevent modification
+    def number(self): return self._number
+
+    # Create readable output:
     def __str__(self) -> str:
         return f"Stars({self.number})"
 
-def f1(x: Stars) -> Stars:
-    return Stars(x.number * 10)
 
-def f2(x: Stars) -> Stars:
-    return Stars(x.number + 10)
+def f1(s: Stars) -> Stars:
+    return Stars(s.number * 10)
+
+
+def f2(s: Stars) -> Stars:
+    return Stars(s.number + 10)
+
 
 if __name__ == '__main__':
     stars1 = Stars(6)
@@ -20,7 +30,6 @@ if __name__ == '__main__':
     print(f2(stars1))
     stars2 = Stars(11)
     print(f1(stars2))
-    stars1.number = 99   # Can still mutate to an invalid Stars
-    print(stars1, "Didn't detect that it's out of range!")
-    # So, still need to validate Stars inside functions
-    print(f2(stars1))
+    # @property without setter prevents mutation:
+    # stars1.number = 99
+    # AttributeError: can't set attribute 'number'

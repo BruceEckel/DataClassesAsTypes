@@ -1,3 +1,4 @@
+# Composing a dataclass from other dataclasses
 from dataclasses import dataclass
 from check import check
 
@@ -14,23 +15,18 @@ class BirthDate:
     dob: str
     def __post_init__(self) -> None:
         print(f"BirthDate checking {self.dob}")
-        check(True, f"Add code to validate {self.dob}")
 
 @dataclass(frozen=True)
 class EmailAddress:
     address: str
     def __post_init__(self) -> None:
         print(f"EmailAddress checking {self.address}")
-        check(True, f"Add code to validate {self.address}")
 
 @dataclass(frozen=True)
 class Person:
     name: FullName
     date_of_birth: BirthDate
     email: EmailAddress
-    def __post_init__(self) -> None:
-        print(f"Person checking fields")
-        check(True, f"Add code to validate Person")
 
 if __name__ == '__main__':
     person = Person(

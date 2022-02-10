@@ -1,3 +1,4 @@
+# "Make impossible values unrepresentable"
 from dataclasses import dataclass
 from check import check
 
@@ -7,11 +8,11 @@ class Stars:
     def __post_init__(self) -> None:
         check(0 < self.number <= 10, f"{self.number} out of range")
 
-def f1(x: Stars) -> Stars:
-    return Stars(x.number * 10)
+def f1(s: Stars) -> Stars:
+    return Stars(s.number * 10)
 
-def f2(x: Stars) -> Stars:
-    return Stars(x.number + 10)
+def f2(s: Stars) -> Stars:
+    return Stars(s.number + 10)
 
 if __name__ == '__main__':
     stars1 = Stars(6)
