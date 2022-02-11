@@ -6,7 +6,7 @@ from check import check
 class Stars:
     number: int
     def __post_init__(self) -> None:
-        check(0 < self.number <= 10, f"{self.number} out of range")
+        check(0 < self.number <= 10, f"{self}")
 
 def f1(s: Stars) -> Stars:
     return Stars(s.number * 10)

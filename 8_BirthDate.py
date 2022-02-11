@@ -10,7 +10,7 @@ class Day:
     n: int
 
     def __post_init__(self) -> None:
-        check(0 < self.n <= 31, f"{self.n}: Day of month out of range")
+        check(0 < self.n <= 31, f"{self}")
 
 
 @dataclass(frozen=True)
@@ -18,7 +18,7 @@ class Year:
     n: int
 
     def __post_init__(self) -> None:
-        check(1900 < self.n <= 2022, f"{self.n}: Year out of range")
+        check(1900 < self.n <= 2022, f"{self}")
 
 
 class Month(Enum):
@@ -37,11 +37,11 @@ class Month(Enum):
 
     @staticmethod
     def number(month_number: int):
-        check(0 < month_number <= 12, f"Month {month_number} out of range")
+        check(0 < month_number <= 12, f"Month({month_number})")
         return list(Month)[month_number - 1]
 
     def check_day(self, day: Day):
-        check(day.n <= self.value[1], f"{day} out of range for {self}")
+        check(day.n <= self.value[1], f"{self} {day}")
 
     def __repr__(self):
         return self.name

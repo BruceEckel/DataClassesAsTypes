@@ -10,7 +10,7 @@ class Day:
     n: int
 
     def __post_init__(self) -> None:
-        check(0 < self.n <= 31, f"Day({self.n}) out of range")
+        check(0 < self.n <= 31, f"Day({self.n})")
 
 
 @dataclass(frozen=True)
@@ -18,7 +18,7 @@ class Year:
     n: int
 
     def __post_init__(self) -> None:
-        check(1900 < self.n <= 2022, f"Year({self.n}) out of range")
+        check(1900 < self.n <= 2022, f"Year({self.n})")
 
 
 @dataclass(frozen=True)
@@ -28,11 +28,11 @@ class Month:
     max_days: int
 
     def __post_init__(self):
-        check(0 < self.n <= 12, f"Month({self.n}) out of range")
-        check(self.max_days in [28, 30, 31], f"Month max_days {self.max_days} out of range")
+        check(0 < self.n <= 12, f"Month({self.n})")
+        check(self.max_days in [28, 30, 31], f"Month max_days {self.max_days}")
 
     def check_day(self, day: Day):
-        check(day.n <= self.max_days, f"{day} out of range for {self}")
+        check(day.n <= self.max_days, f"{self} {day}")
 
     @staticmethod
     def make_months():
@@ -57,7 +57,7 @@ class Months:
     months: List[Month] = field(default_factory=Month.make_months)
 
     def number(self, month_number: int):
-        check(0 < month_number <= 12, f"Month({month_number}) out of range")
+        check(0 < month_number <= 12, f"Month({month_number})")
         return self.months[month_number - 1]
 
 

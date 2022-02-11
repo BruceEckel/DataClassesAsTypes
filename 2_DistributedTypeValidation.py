@@ -8,11 +8,11 @@ class Stars:
         return f"Stars({self.number})"
 
 def f1(s: Stars) -> Stars:
-    check(0 < s.number <= 10, f"{s.number} out of range")
+    check(0 < s.number <= 10, f"{s}")
     return Stars(s.number * 10)
 
 def f2(s: Stars) -> Stars:
-    check(0 < s.number <= 10, f"{s.number} out of range")
+    check(0 < s.number <= 10, f"{s}")
     return Stars(s.number + 10)
 
 if __name__ == '__main__':

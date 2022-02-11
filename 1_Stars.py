@@ -3,11 +3,11 @@
 from check import check
 
 def f1(stars: int) -> int:
-    check(0 < stars <= 10, f"{stars} out of range")
+    check(0 < stars <= 10, f"{stars}")
     return stars * 10
 
 def f2(stars: int) -> int:
-    check(0 < stars <= 10, f"{stars} out of range")
+    check(0 < stars <= 10, f"{stars}")
     return stars + 10
 
 if __name__ == '__main__':

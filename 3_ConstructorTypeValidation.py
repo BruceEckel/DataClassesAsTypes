@@ -5,7 +5,7 @@ from check import check
 class Stars:
     def __init__(self, number: int):
         self._number = number
-        check(0 < self._number <= 10, f"{self._number} out of range")
+        check(0 < self._number <= 10, f"{self}")
 
     @property  # Prevent modification
     def number(self): return self._number
