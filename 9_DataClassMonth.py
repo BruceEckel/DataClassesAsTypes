@@ -1,5 +1,5 @@
 # Month can be created using dataclasses, but it's more
-# complicated than using Enum with questionable benefits.
+# complicated than using Enum, with questionable benefits.
 from dataclasses import dataclass, field
 from typing import List
 from check import check

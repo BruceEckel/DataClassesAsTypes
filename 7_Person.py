@@ -8,7 +8,7 @@ class FullName:
     def __post_init__(self) -> None:
         print(f"FullName checking {self.name}")
         check(len(self.name.split()) > 1,
-              f"'{self.name}' needs at least first and last names")
+              f"'{self.name}'", "needs at least first and last names")
 
 @dataclass(frozen=True)
 class BirthDate:

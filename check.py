@@ -1,3 +1,3 @@
-def check(exp: bool, err_msg: str) -> None:
+def check(exp: bool, err_msg: str, msg2: str = "out of range") -> None:
     if not exp:
-        print(f"Type failure: {err_msg} out of range")
+        print(f"Type failure: {err_msg} {msg2}")

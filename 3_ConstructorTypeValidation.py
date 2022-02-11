@@ -7,7 +7,8 @@ class Stars:
         self._number = number
         check(0 < self._number <= 10, f"{self}")
 
-    @property  # Prevent modification
+    # Must remember to prevent modification:
+    @property
     def number(self): return self._number
 
     # Create readable output:

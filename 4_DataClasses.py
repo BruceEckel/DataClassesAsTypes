@@ -14,7 +14,7 @@ if __name__ == '__main__':
     print(mm == Messenger("xx", 1))  # Generates __eq__()
     print(mm == Messenger("xx", 2))
 
-    # Default dataclass is mutable:
+    # Mutable:
     m.name = "bar"
     print(m)
     # d = {m: "value"}
