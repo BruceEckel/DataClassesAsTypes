@@ -8,6 +8,7 @@ class Messenger:
 
 if __name__ == '__main__':
     m = Messenger("foo", 12, 3.14)
+    print(m)
     # Frozen dataclass is immutable:
     # m.name = "bar"
     # dataclasses.FrozenInstanceError: cannot assign to field 'name'

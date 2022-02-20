@@ -1,6 +1,6 @@
 # "Make impossible values unrepresentable"
 from dataclasses import dataclass
-from check import check
+from validation import check
 
 @dataclass(frozen=True)
 class Stars:
@@ -9,16 +9,15 @@ class Stars:
         check(0 < self.number <= 10, f"{self}")
 
 def f1(s: Stars) -> Stars:
-    return Stars(s.number * 10)
+    return Stars(s.number + 5)
 
 def f2(s: Stars) -> Stars:
-    return Stars(s.number + 10)
+    return Stars(s.number * 5)
 
 if __name__ == '__main__':
-    stars1 = Stars(6)
+    stars1 = Stars(4)
     print(stars1)
     print(f1(stars1))
-    print(f2(stars1))
+    print(f2(f1(stars1)))
     stars2 = Stars(11)
     print(f1(stars2))
-    # stars1.number = 99  # Can't modify number

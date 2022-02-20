@@ -2,7 +2,7 @@
 # when you have a smaller set of values.
 from dataclasses import dataclass
 from enum import Enum
-from check import check
+from validation import check
 
 
 @dataclass(frozen=True)

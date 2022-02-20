@@ -1,6 +1,6 @@
 # Composing a dataclass from other dataclasses
 from dataclasses import dataclass
-from check import check
+from validation import check
 
 @dataclass(frozen=True)
 class FullName:

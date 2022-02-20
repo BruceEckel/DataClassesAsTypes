@@ -1,14 +1,15 @@
-# Evaluating using 1-10 stars.
-# Validation using preconditions.
-from check import check
+# Using 1-10 stars for customer feedback.
+from validation import check
 
 def f1(stars: int) -> int:
+    # Must check argument...
     check(0 < stars <= 10, f"f1: {stars}")
-    return stars * 10
+    return stars + 5
 
 def f2(stars: int) -> int:
+    # ...each place it is used.
     check(0 < stars <= 10, f"f2: {stars}")
-    return stars + 10
+    return stars * 5
 
 if __name__ == '__main__':
     stars1 = 6

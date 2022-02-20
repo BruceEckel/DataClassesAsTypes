@@ -9,7 +9,7 @@ class Messenger:
 if __name__ == '__main__':
     m = Messenger("foo", 12, 3.14)
     print(m)
-    print(m.number, m.name, m.depth)
+    print(m.name, m.number, m.depth)
     mm = Messenger("xx", 1)  # Uses default argument
     print(mm == Messenger("xx", 1))  # Generates __eq__()
     print(mm == Messenger("xx", 2))

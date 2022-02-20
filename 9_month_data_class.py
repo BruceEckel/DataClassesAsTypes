@@ -2,7 +2,7 @@
 # complicated than using Enum, with questionable benefits.
 from dataclasses import dataclass, field
 from typing import List
-from check import check
+from validation import check
 
 
 @dataclass(frozen=True)
