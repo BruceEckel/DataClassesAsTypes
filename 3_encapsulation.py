@@ -4,7 +4,7 @@ from validation import check
 class Stars:
     def condition(self, s: int = None):
         if s:
-            check(0 < s <= 10, f"{self}")
+            check(0 < s <= 10, f"{s}, {self}")
         else:
             check(0 < self._number <= 10, f"{self}")
 
@@ -20,6 +20,7 @@ class Stars:
     def __str__(self) -> str:
         return f"Stars({self._number})"
 
+    # Member functions guard the private variables:
     def f1(self, n_stars: int) -> int:
         self.condition(n_stars)  # Precondition
         self._number = n_stars + 5
