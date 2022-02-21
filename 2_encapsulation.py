@@ -9,7 +9,7 @@ class Stars:
             check(0 < self._number <= 10, f"{self}")
 
     def __init__(self, n_stars: int):
-        self._number = n_stars
+        self._number = n_stars  # _number private by convention
         self.condition()
 
     # Prevent external modification:
@@ -20,7 +20,7 @@ class Stars:
     def __str__(self) -> str:
         return f"Stars({self._number})"
 
-    # Member functions guard the private variables:
+    # Every member function must guard the private variable:
     def f1(self, n_stars: int) -> int:
         self.condition(n_stars)  # Precondition
         self._number = n_stars + 5

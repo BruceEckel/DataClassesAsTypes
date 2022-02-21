@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 @dataclass
 class Messenger:
@@ -13,6 +13,10 @@ if __name__ == '__main__':
     mm = Messenger("xx", 1)  # Uses default argument
     print(mm == Messenger("xx", 1))  # Generates __eq__()
     print(mm == Messenger("xx", 2))
+
+    # Make a copy with a different depth:
+    mc = replace(m, depth=9.9)
+    print(m, mc)
 
     # Mutable:
     m.name = "bar"
