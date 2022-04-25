@@ -8,7 +8,6 @@ from validation import check
 @dataclass(frozen=True)
 class Day:
     n: int
-
     def __post_init__(self) -> None:
         check(0 < self.n <= 31, f"{self}")
 
@@ -16,7 +15,6 @@ class Day:
 @dataclass(frozen=True)
 class Year:
     n: int
-
     def __post_init__(self) -> None:
         check(1900 < self.n <= 2022, f"{self}")
 
@@ -52,7 +50,6 @@ class BirthDate:
     m: Month
     d: Day
     y: Year
-
     def __post_init__(self):
         self.m.check_day(self.d)
 

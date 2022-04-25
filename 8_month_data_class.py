@@ -8,7 +8,6 @@ from validation import check
 @dataclass(frozen=True)
 class Day:
     n: int
-
     def __post_init__(self) -> None:
         check(0 < self.n <= 31, f"Day({self.n})")
 
@@ -16,7 +15,6 @@ class Day:
 @dataclass(frozen=True)
 class Year:
     n: int
-
     def __post_init__(self) -> None:
         check(1900 < self.n <= 2022, f"Year({self.n})")
 
@@ -26,7 +24,6 @@ class Month:
     name: str
     n: int
     max_days: int
-
     def __post_init__(self):
         check(0 < self.n <= 12, f"Month({self.n})")
         check(self.max_days in [28, 30, 31], f"Month max_days {self.max_days}")
