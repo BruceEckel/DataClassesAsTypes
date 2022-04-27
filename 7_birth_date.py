@@ -9,7 +9,7 @@ from validation import check
 class Day:
     n: int
     def __post_init__(self) -> None:
-        check(0 < self.n <= 31, f"{self}")
+        check(1 <= self.n <= 31, f"{self}")
 
 
 @dataclass(frozen=True)
@@ -35,7 +35,7 @@ class Month(Enum):
 
     @staticmethod
     def number(month_number: int):
-        check(0 < month_number <= 12, f"Month({month_number})")
+        check(1 <= month_number <= 12, f"Month({month_number})")
         return list(Month)[month_number - 1]
 
     def check_day(self, day: Day):

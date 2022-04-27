@@ -1,3 +1,4 @@
+# "A type is a set of values"
 # "Make impossible values unrepresentable"
 from dataclasses import dataclass
 from validation import check
@@ -6,7 +7,7 @@ from validation import check
 class Stars:
     number: int
     def __post_init__(self) -> None:
-        check(0 < self.number <= 10, f"{self}")
+        check(1 <= self.number <= 10, f"{self}")
 
 def f1(s: Stars) -> Stars:
     return Stars(s.number + 5)

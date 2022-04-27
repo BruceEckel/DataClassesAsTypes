@@ -9,7 +9,7 @@ from validation import check
 class Day:
     n: int
     def __post_init__(self) -> None:
-        check(0 < self.n <= 31, f"Day({self.n})")
+        check(1 <= self.n <= 31, f"Day({self.n})")
 
 
 @dataclass(frozen=True)
@@ -25,7 +25,7 @@ class Month:
     n: int
     max_days: int
     def __post_init__(self):
-        check(0 < self.n <= 12, f"Month({self.n})")
+        check(1 <= self.n <= 12, f"Month({self.n})")
         check(self.max_days in [28, 30, 31], f"Month max_days {self.max_days}")
 
     def check_day(self, day: Day):
@@ -54,7 +54,7 @@ class Months:
     months: List[Month] = field(default_factory=Month.make_months)
 
     def number(self, month_number: int):
-        check(0 < month_number <= 12, f"Month({month_number})")
+        check(1 <= month_number <= 12, f"Month({month_number})")
         return self.months[month_number - 1]
 
 

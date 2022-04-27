@@ -7,6 +7,7 @@ class Messenger:
     depth: float = 0.0  # Default
 
 if __name__ == '__main__':
+    x = Messenger(name="x", number=9, depth=2.0)
     m = Messenger("foo", 12, 3.14)
     print(m)
     print(m.name, m.number, m.depth)

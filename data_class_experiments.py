@@ -1,4 +1,5 @@
 from dataclasses import *
+from enum import Enum
 
 
 @dataclass(frozen=True)
@@ -59,3 +60,17 @@ class Square(Rectangle):
 
 square = Square(99.0, 88.0, 5.0)
 print(square)
+
+# You can assign any object to an enum value:
+
+@dataclass
+class Bar:
+    ding: int
+    dong: str
+
+class Foo(Enum):
+    BOO = Bar(1, "x")
+    BE =  Bar(2, "y")
+    DO =  Bar(3, "z")
+
+print(Foo.DO.value.dong)

@@ -4,9 +4,9 @@ from validation import check
 class Stars:
     def condition(self, s: int = None):
         if s:
-            check(0 < s <= 10, f"{self}: {s}")
+            check(1 <= s <= 10, f"{self}: {s}")
         else:
-            check(0 < self._number <= 10, f"{self}")
+            check(1 <= self._number <= 10, f"{self}")
 
     def __init__(self, n_stars: int):
         self._number = n_stars  # _number private by convention

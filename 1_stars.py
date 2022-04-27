@@ -3,12 +3,12 @@ from validation import check
 
 def f1(stars: int) -> int:
     # Must check argument...
-    check(0 < stars <= 10, f"f1: {stars}")
+    check(1 <= stars <= 10, f"f1: {stars}")
     return stars + 5
 
 def f2(stars: int) -> int:
     # ...each place it is used.
-    check(0 < stars <= 10, f"f2: {stars}")
+    check(1 <= stars <= 10, f"f2: {stars}")
     return stars * 5
 
 if __name__ == '__main__':
