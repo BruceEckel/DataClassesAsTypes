@@ -1,7 +1,7 @@
 # Month can be created using dataclasses, but it's more
 # complicated than using Enum, with questionable benefits.
 
-# Also check out the 'attrs' library.
+# Also check out the 'attrs' library & pydantic.
 
 from dataclasses import dataclass, field
 from typing import List
