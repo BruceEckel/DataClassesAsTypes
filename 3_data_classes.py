@@ -4,7 +4,7 @@ from dataclasses import dataclass, replace
 class Messenger:
     name: str
     number: int
-    depth: float = 0.0  # Default
+    depth: float = 0.0  # Default argument
 
 if __name__ == '__main__':
     x = Messenger(name="x", number=9, depth=2.0)

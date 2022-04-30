@@ -9,7 +9,7 @@ class Stars:
             check(1 <= self._number <= 10, f"{self}")
 
     def __init__(self, n_stars: int):
-        self._number = n_stars  # _number private by convention
+        self._number = n_stars  # Private by convention
         self.condition()
 
     # Prevent external modification:
