@@ -2,15 +2,15 @@
 from validation import check
 
 class Stars:
+    def __init__(self, n_stars: int):
+        self._number = n_stars  # Private by convention
+        self.condition()
+
     def condition(self, s: int = None):
         if s:
             check(1 <= s <= 10, f"{self}: {s}")
         else:
             check(1 <= self._number <= 10, f"{self}")
-
-    def __init__(self, n_stars: int):
-        self._number = n_stars  # Private by convention
-        self.condition()
 
     # Prevent external modification:
     @property

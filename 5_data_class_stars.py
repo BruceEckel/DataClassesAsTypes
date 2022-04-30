@@ -1,3 +1,4 @@
+# The functional approach
 # "A type is a set of values"
 # "Make impossible values unrepresentable"
 from dataclasses import dataclass
