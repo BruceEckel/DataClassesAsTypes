@@ -1,5 +1,6 @@
 # An Enum is also a type, and is preferable
 # when you have a smaller set of values.
+# "Leap years are left as an exercise."
 from dataclasses import dataclass
 from enum import Enum
 from validation import check
