@@ -6,7 +6,7 @@ class Stars:
         self._number = n_stars  # Private by convention
         self.condition()
 
-    def condition(self, s: int = None):
+    def condition(self, s: int|None = None):
         if s:
             check(1 <= s <= 10, f"{self}: {s}")
         else:
