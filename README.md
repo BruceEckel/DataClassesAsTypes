@@ -1,5 +1,7 @@
 # Examples for Python Presentation: "Making Data Classes Work for You"
 
+[Youtube Video from Pycon 2022](https://www.youtube.com/watch?v=w77Kjs5dEko&ab_channel=PyConUS)
+
 A type defines a set of values. Historically we haven't been very good at
 programming our classes to ensure that objects stay within that set of values.
 This presentation looks at the problems with traditional OO encapsulation, and
